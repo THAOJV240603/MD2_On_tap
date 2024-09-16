@@ -10,8 +10,6 @@ import java.util.List;
 import java.util.Scanner;
 
 public class Ecommerce {
-    //private static List<Category> categories = new ArrayList<>();
-    //private static List<Product> products = new ArrayList<>();
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         do{

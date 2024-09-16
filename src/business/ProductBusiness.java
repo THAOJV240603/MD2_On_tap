@@ -1,6 +1,7 @@
 package business;
 
 import enity.Product;
+import enity.Category;
 import util.ConnectionDB;
 
 import java.sql.Connection;
@@ -28,10 +29,10 @@ public class ProductBusiness {
                 Product product = new Product();
                 product.setId(resultSet.getInt("id"));
                 product.setName(resultSet.getString("name"));
-                product.getPrice();
-                product.getSale_price();
-                product.getImage();
-                product.getCategoryId();
+                product.getPrice(resultSet.getFloat("price"));
+                product.getSale_price(resultSet.getFloat("sale_price"));
+                product.getImage(resultSet.getString("image"));
+                product.getCategoryId(resultSet.getInt("category_id"));
                 product.setStatus(resultSet.getBoolean("status"));
                 products.add(product);
             }
@@ -59,10 +60,10 @@ public class ProductBusiness {
                 count++;
                 product.setId(resultSet.getInt("id"));
                 product.setName(resultSet.getString("name"));
-                product.getPrice();
-                product.getSale_price();
-                product.getImage();
-                product.getCategoryId();
+                product.getPrice(resultSet.getFloat("price"));
+                product.getSale_price(resultSet.getFloat("sale_price"));
+                product.getImage(resultSet.getString("image"));
+                product.getCategoryId(resultSet.getInt("category_id"));
                 product.setStatus(resultSet.getBoolean("status"));
             }
             System.out.println(count);
@@ -125,6 +126,7 @@ public class ProductBusiness {
             statement.setInt(5,product.getCategoryId());
             statement.setBoolean(6,product.isStatus());
             statement.setInt(7,product.getId());
+
             //thực thi câu truy vấn
             statement.executeUpdate();
             return true;

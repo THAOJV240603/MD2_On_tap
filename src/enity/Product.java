@@ -40,7 +40,7 @@ public class Product {
         this.name = name;
     }
 
-    public float getPrice() {
+    public float getPrice(float price) {
         return this.price;
     }
 
@@ -48,7 +48,7 @@ public class Product {
         this.price = price;
     }
 
-    public float getSale_price() {
+    public float getSale_price(float salePrice) {
         return sale_price;
     }
 
@@ -56,7 +56,7 @@ public class Product {
         this.sale_price = sale_price;
     }
 
-    public String getImage() {
+    public String getImage(String image) {
         return this.image;
     }
 
@@ -64,7 +64,7 @@ public class Product {
         this.image = image;
     }
 
-    public int getCategoryId() {
+    public int getCategoryId(int categoryId) {
         return this.categoryId;
     }
 
@@ -106,4 +106,5 @@ public class Product {
         System.out.println("Trạng thái : " + (this.status ? "Hoạt động" : "Không hoạt động"));
         System.out.println("\n");
     }
+
 }
